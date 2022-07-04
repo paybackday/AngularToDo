@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; //When we add FormsModule into the imports side this codeline is going to add automatically to here. If we want to use ngModel command into the html page we have to define FormsModule.
 import { BrowserModule } from '@angular/platform-browser';
 
 import { TodoComponent } from './todo/todo.component';
@@ -8,7 +9,8 @@ import { TodoComponent } from './todo/todo.component';
     TodoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [TodoComponent]

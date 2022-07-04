@@ -9,11 +9,11 @@
             </div>
 
             <div class="form-check mb3">
-                <input type="checkbox" class="form-check-input" name="" id="displayAll">
+                <input type="checkbox" [(ngModel)]="displayAll" class="form-check-input" name="" id="displayAll">
                 <label for="displayAll" class="form-check-label">Hepsini Goster</label>
             </div>
 
-            {{message}}
+            {{displayAll}}
 
             <table class="table table-bordered">
                 <thead>

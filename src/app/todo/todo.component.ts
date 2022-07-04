@@ -13,6 +13,8 @@ export class TodoComponent implements OnInit {
 
   private name = "Emre"; //Variable declaration
 
+  public displayAll:boolean = false;
+
   public message="";
 
   public model=new Model();
@@ -21,15 +23,24 @@ export class TodoComponent implements OnInit {
     return this.model.name;
   }
 
-  public getItems(){
-    return this.model.items;
+  public getItems()
+  {
+    if (this.displayAll) 
+    {
+      return this.model.items;  
+    }
+    else
+    {
+      return this.model.items.filter(x=>x.action==false)
+    }
+    
   }
 
   public addItem(inputValue:string){
     this.message=inputValue;
     if (inputValue!="") 
     {
-      this.model.items.push(new ToDoItem(inputValue,"no"));
+      this.model.items.push(new ToDoItem(inputValue,false));
     }
     else
     {

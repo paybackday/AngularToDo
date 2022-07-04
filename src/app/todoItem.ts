@@ -1,6 +1,6 @@
 export class ToDoItem{
     description:string;
-    action:string;
+    action:boolean;
 
     // When we define class, TypeScript is going to give error to us about defined properties because TypeScript always request first time initialize parameter. For the solve this problem firstly we should go to tsconfig.json where have been typescript configurations. We need to define strictNullChecks : false under the compiler options settings.
 
@@ -8,7 +8,7 @@ export class ToDoItem{
 
 //As seen below we can create constructor with parameters for assign to properties.
 
-    constructor(description:string, action:string){
+    constructor(description:string, action:boolean){
         this.description=description;
         this.action=action;
     }

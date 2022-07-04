@@ -7,10 +7,10 @@ export class Model{
     constructor(){
         this.name="Emre";
         this.items=[
-            new ToDoItem("kahvalti","yes"),
-            new ToDoItem("spor","yes"),
-            new ToDoItem("alisveris","no"),
-            new ToDoItem("testDeneme","no"),
+            new ToDoItem("kahvalti",true),
+            new ToDoItem("spor",true),
+            new ToDoItem("alisveris",false),
+            new ToDoItem("testDeneme",false),
         ]
 
     }
