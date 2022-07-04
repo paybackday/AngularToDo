@@ -4,14 +4,16 @@
             <h3 class="bg-primary text-white p-3">Emre'nin Listesi</h3>
 
             <div class="input-group mb-3">
-                <input type="text" class="form-control"/>
-                <button class="btn btn-outline-primary">Ekle</button>
+                <input #input type="text" class="form-control" (keyup.enter)="addItem(input.value);"/>
+                <button class="btn btn-outline-primary" (click)="addItem(input.value); input.value='';">Ekle</button>
             </div>
 
             <div class="form-check mb3">
                 <input type="checkbox" class="form-check-input" name="" id="displayAll">
                 <label for="displayAll" class="form-check-label">Hepsini Goster</label>
             </div>
+
+            {{message}}
 
             <table class="table table-bordered">
                 <thead>
@@ -22,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of items; let i =index">
+                    <tr *ngFor="let item of getItems(); let i =index">
                         <th>{{i+1}}</th>
                         <th>{{item.description}}</th>
                         <th>{{item.action}}</th>
