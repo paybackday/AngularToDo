@@ -4,8 +4,12 @@
             <h3 class="bg-primary text-white p-3">Emre'nin Listesi</h3>
 
             <div class="input-group mb-3">
-                <input #input type="text" class="form-control" (keyup.enter)="addItem(input.value);"/>
-                <button class="btn btn-outline-primary" (click)="addItem(input.value); input.value='';">Ekle</button>
+                <input 
+                [(ngModel)]="inputText"
+                type="text" class="form-control" (keyup.enter)="addItem();"/>
+                <button 
+                [class.disabled]="inputText.length==0"
+                class="btn btn-outline-primary" (click)="addItem();">Ekle</button>
             </div>
 
             <div class="form-check mb3">
@@ -28,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of getItems(); let i =index">
+                    <tr *ngFor="let item of getItems(); let i =index" [class]="{'bg-success':item.action, 'bg-warning': !item.action}">
                         <td>{{i+1}}</td>
                         <td>{{item.description}}</td>
                         <td>

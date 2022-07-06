@@ -13,6 +13,8 @@ export class TodoComponent implements OnInit {
 
   private name = "Emre"; //Variable declaration
 
+  public inputText="";
+
   public displayAll:boolean = false;
 
   public message="";
@@ -36,11 +38,12 @@ export class TodoComponent implements OnInit {
     
   }
 
-  public addItem(inputValue:string){
-    this.message=inputValue;
-    if (inputValue!="") 
+  public addItem(){
+    this.message=this.inputText;
+    if (this.inputText!="") 
     {
-      this.model.items.push(new ToDoItem(inputValue,false));
+      this.model.items.push(new ToDoItem(this.inputText,false));
+      this.inputText="";
     }
     else
     {
