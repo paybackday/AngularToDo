@@ -48,6 +48,11 @@ export class TodoComponent implements OnInit {
     }
   }
 
+  public geCompletedItemsCount(){
+    return this.model.items.filter(x=>x.action).length;
+
+  }
+
   //As we do on other language we should define a class model for list etc. For we doing this firstly let we create '.ts' file inside of the app folder.
 
 
