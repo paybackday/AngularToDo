@@ -5,11 +5,16 @@
 
             <div class="input-group mb-3">
                 <input 
-                [(ngModel)]="inputText"
-                type="text" class="form-control" (keyup.enter)="addItem();"/>
-                <button 
-                [class.disabled]="inputText.length==0"
-                class="btn btn-outline-primary" (click)="addItem();">Ekle</button>
+                    [(ngModel)]="inputText"
+                    type="text" 
+                    class="form-control" 
+                    (keyup.enter)="addItem();"
+                />
+            <button 
+                [class]="getBtnClasses()"
+                class="btn" 
+                (click)="addItem();">Ekle
+            </button>
             </div>
 
             <div class="form-check mb3">

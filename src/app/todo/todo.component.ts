@@ -53,6 +53,14 @@ export class TodoComponent implements OnInit {
 
   public geCompletedItemsCount(){
     return this.model.items.filter(x=>x.action).length;
+  }
+
+  public getBtnClasses(){
+    return {
+      'disabled': this.inputText.length==0,
+      'btn-secondary':this.inputText.length==0,
+      'btn-primary':this.inputText.length>0
+    }
 
   }
 
