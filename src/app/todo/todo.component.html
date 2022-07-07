@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-5 mx-auto">
-            <h3 class="bg-primary text-white p-3">Emre'nin Listesi</h3>
+            <h3 class="bg-secondary text-white p-3">List of {{name}}</h3>
 
             <div class="input-group mb-3">
                 <input 
@@ -13,13 +13,13 @@
             <button 
                 [class]="getBtnClasses()"
                 class="btn" 
-                (click)="addItem();">Ekle
+                (click)="addItem();">Add
             </button>
             </div>
 
             <div class="form-check mb3">
                 <input type="checkbox" [(ngModel)]="displayAll" class="form-check-input" name="" id="displayAll">
-                <label for="displayAll" class="form-check-label">Hepsini Goster</label>
+                <label for="displayAll" class="form-check-label">Show All</label>
             </div>
 
             <div class="my-2 alert alert-success">
@@ -49,7 +49,7 @@
                             </div>
                         </td>
                         <td>
-                            <input type="checkbox" [(ngModel)]="item.action">
+                            <input type="checkbox" (change)="onActionChanged(item)" [(ngModel)]="item.action">
                         </td>
                         
                     </tr>
